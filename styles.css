@@ -1,25 +1,37 @@
 :root {
-  --spot-green: #1DB954; /* nb. official logo is a lighter green */
+  --spot-green: #1db954; /* nb. official logo is a lighter green */
   --spot-black: rgb(25, 20, 20); /* for background */
   --spot-blue-grad: rgb(37, 69, 108);
-  --spot-transp: rgba(39,55,95,0.2); /* for gradient */
+  --spot-transp: rgba(39, 55, 95, 0.2); /* for gradient */
   --spot-blue: rgb(39, 55, 95); /* for button */
+  --dark-gray: #241d1d; /* for album background */
 }
 @import url(//db.onlinewebfonts.com/c/01173b246d9d9ea808ea75a26b3b61bb?family=Circular+Spotify+Tx+T+Black);
-@font-face 
-  {font-family: "Circular Spotify Tx T Black"; src: url("//db.onlinewebfonts.com/t/01173b246d9d9ea808ea75a26b3b61bb.eot"); src: url("//db.onlinewebfonts.com/t/01173b246d9d9ea808ea75a26b3b61bb.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/01173b246d9d9ea808ea75a26b3b61bb.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/01173b246d9d9ea808ea75a26b3b61bb.woff") format("woff"), url("//db.onlinewebfonts.com/t/01173b246d9d9ea808ea75a26b3b61bb.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/01173b246d9d9ea808ea75a26b3b61bb.svg#Circular Spotify Tx T Black") format("svg");
+@font-face {
+  font-family: "Circular Spotify Tx T Black";
+  src: url("//db.onlinewebfonts.com/t/01173b246d9d9ea808ea75a26b3b61bb.eot");
+  src: url("//db.onlinewebfonts.com/t/01173b246d9d9ea808ea75a26b3b61bb.eot?#iefix")
+      format("embedded-opentype"),
+    url("//db.onlinewebfonts.com/t/01173b246d9d9ea808ea75a26b3b61bb.woff2")
+      format("woff2"),
+    url("//db.onlinewebfonts.com/t/01173b246d9d9ea808ea75a26b3b61bb.woff")
+      format("woff"),
+    url("//db.onlinewebfonts.com/t/01173b246d9d9ea808ea75a26b3b61bb.ttf")
+      format("truetype"),
+    url("//db.onlinewebfonts.com/t/01173b246d9d9ea808ea75a26b3b61bb.svg#Circular Spotify Tx T Black")
+      format("svg");
 }
 body {
-  background-color: var(--spot-black);  
+  background-color: var(--spot-black);
 }
-*{
-  font-family: 'Circular Spotify Tx T Black', sans-serif;
+* {
+  font-family: "Circular Spotify Tx T Black", sans-serif;
   margin: 0;
   color: white;
 }
 
 /* **************** SIDE NAV ********************** */
-.sidebar{
+.sidebar {
   width: 230px; /*width: 260px;*/
   height: 100%;
   position: fixed;
@@ -30,7 +42,7 @@ body {
   padding-left: 0;
   margin: 0;
 }
-#logo{
+#logo {
   margin-left: 12px !important;
   justify-content: center;
   display: flex;
@@ -40,10 +52,10 @@ body {
   image-rendering: optimizeQuality;
   color: rgb(177, 172, 172);
 }
-.sidebar a{
+.sidebar a {
   display: block;
   padding-left: 10px; /*18px*/
-  margin-left: 10px; 
+  margin-left: 10px;
   margin-top: 20px;
   color: rgb(177, 172, 172);
   font-size: 0.7em; /* added  16:21 11/5/21*/
@@ -51,64 +63,73 @@ body {
   cursor: pointer;
   text-decoration: none;
 }
-#tarkan{
- object-fit: cover;
- max-height: 40px;
- max-width: 40px;
- border-radius: 25px;
- margin-left: 25px;
+#tarkan {
+  object-fit: cover;
+  max-height: 40px;
+  max-width: 40px;
+  border-radius: 25px;
+  margin-left: 25px;
 }
-.sidebar a.active{ /* added a class of active to home so it looks exactly like the screenshot, in navbar, click makes link active */ 
+.sidebar a.active {
+  /* added a class of active to home so it looks exactly like the screenshot, in navbar, click makes link active */
   border-left: 4px solid var(--spot-green);
   color: #fff;
 }
 .player {
-  display: flex;     
+  display: flex;
 }
 @media screen and (max-width: 700px) {
-.sidebar {
-  width: 100%;
-  height: auto;
-  position: relative;
-}
-.sidebar a {
-  float: left;
-}
-div.content {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .sidebar a {
+    float: left;
+  }
+  div.content {
     margin-left: 0;
-} /* THIS IS CAUSING THE ISSUE */
-} /* THIS IS CAUSING THE ISSUE */
+  }
+}
 @media screen and (max-width: 400px) {
-.sidebar a {
-  text-align: center;
-  float: none;
-} /* THIS IS CAUSING THE ISSUE */
-} /* THIS IS CAUSING THE ISSUE */
+  .sidebar a {
+    text-align: center;
+    float: none;
+  }
+}
 .side {
-height:90vh;
-display:flex;
-flex-direction: column;
-justify-content:space-between;
-padding-bottom: 20px;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 20px;
 }
-#side{
-cursor: pointer;
+#side {
+  cursor: pointer;
 }
-.items:hover{
-color: #fff;
+.items:hover {
+  color: #fff;
 }
-/* **************** END OF ARTIST PAGE ********************** */
+/* **************** END OF SIDE NAV ********************** */
 
 /* **************** HOME CARDS ********************** */
-#home-cards { 
+#home-cards {
   height: 97vh !important; /*important!*/
   background-color: var(--spot-blue);
-  background: var(--spot-blue);  /* fallback for old browsers */
-  background: -webkit-linear-gradient(90deg, var(--spot-blue-grad), var(--spot-black));  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(90deg, var(--spot-blue-grad), var(--spot-black)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: var(--spot-blue); /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    90deg,
+    var(--spot-blue-grad),
+    var(--spot-black)
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    90deg,
+    var(--spot-blue-grad),
+    var(--spot-black)
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 .mainsection {
-left: 50px;
+  right: 2%;
 }
 .nav#topnav {
   position: relative;
@@ -128,7 +149,8 @@ left: 50px;
   padding: 1vh 1vw;
   text-decoration: none;
 }
-.nav#topnav a.active::before { /* section nav green border */ 
+.nav#topnav a.active::before {
+  /* section nav green border */
   content: "";
   opacity: 1;
   background-color: var(--spot-green);
@@ -138,16 +160,19 @@ left: 50px;
   width: 6%;
   height: 0.5vh;
 }
-.nav#topnav a:hover, .nav#topnav a.active {
+.nav#topnav a:hover,
+.nav#topnav a.active {
   color: white;
-} 
-.card-collection {
-margin-top: 10px;
 }
-.card-collection .allcaps, .card-collection .genres { /* #THROWBACKTHURSDAY and Classifiche*/
+.card-collection {
+  margin-top: 10px;
+}
+.card-collection .allcaps,
+.card-collection .genres {
+  /* #THROWBACKTHURSDAY and Classifiche*/
   padding-left: 5px;
   color: white;
-  font-size: 1.7em; 
+  font-size: 1.7em;
   font-weight: 700;
 }
 .card-collection .allcaps {
@@ -155,7 +180,7 @@ margin-top: 10px;
 }
 .card-collection .card {
   border: 0;
-  background-color: rgba(0,0,0,0);
+  background-color: rgba(0, 0, 0, 0);
   text-align: center;
 }
 .card-collection p {
@@ -279,60 +304,211 @@ margin-top: 10px;
 .jumbo-artist #btn-follow {
   /* background-color: var(--spot-black); */
   border-radius: 30px;
+  color: white;
   border: 1px solid rgb(82, 82, 82);
   padding-inline: 40px;
   background: radial-gradient(
     circle,
-    rgba(255, 255, 255, 0.7455357142857143) 35%,
+    rgba(255, 255, 255, 0) 35%,
     rgba(7, 7, 7, 1) 100%
   );
 }
 .jumbo-artist #btn-follow:hover {
   background-color: var(--spot-black);
   border-color: var(--spot-black);
-  color: black;
+  color: rgba(255, 255, 255, 0.624);
+}
+#queen-wp {
+  background-image: url(/assets/albun_covers/queen_wp-3.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 400px;
+}
+
+#queen-wp::before {
+  content: " ";
+  height: 400px;
+  background: radial-gradient(
+    at top,
+    rgba(255, 255, 255, 0.25) 0%,
+    var(--spot-black) 65%
+  );
+
+  position: fixed;
+  width: 100%;
+}
+.jumbo-artist h5 {
+  font-family: sans-serif;
+  font-weight: lighter;
+  color: #ffffff87;
+  font-size: smaller;
+}
+#footer-artist {
+  z-index: 3;
+  padding-top: 10px; /*20px*/
+  background-color: #383535;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  height: 75px; /* IMPORTANT: has been matched to screenshot (was 100px) */
+  width: 100%;
+}
+#footer-artist img {
+  margin-left: 8px;
+  width: 60px;
+  height: 60px;
+}
+.nav#topnav {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  overflow: hidden;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.6em;
+  font-weight: 700;
+}
+.nav#nav-artist a {
+  color: #979faa;
+  text-align: center;
+  display: block;
+  text-align: center;
+  padding: 1vh 1vw;
+  text-decoration: none;
+}
+.nav#nav-artist a.active::before {
+  /* section nav green border */
+  content: "";
+  opacity: 1;
+  background-color: var(--spot-green);
+  position: absolute;
+  top: 5vh;
+  /* left: %; */
+  width: 85px;
+  height: 0.5vh;
+}
+.nav#nav-artist a:hover,
+.nav#nav-artist a.active {
+  color: white;
 }
 /* **************** END OF ARTIST PAGE ********************** */
 
+/* **************** ALBUM PAGE ********************** */
+#album-section {
+  background-color: var(--dark-gray);
+}
+.album-cover .card,
+.album-cover .card-body,
+.album-cover .card-text {
+  background-color: var(--dark-gray);
+  border: 0;
+  margin: 0;
+  padding: 0;
+  font-size: 0.8rem;
+}
+.album-cover .card-body h3 {
+  text-align: center;
+  font-size: 1.3rem;
+}
+.album-cover .card-body p {
+  text-align: center;
+  color: #979faa;
+}
+.album-cover .card-body div {
+  border: 2px solid red;
+}
+.album-cover .card-body i {
+  padding-top: 10px;
+  color: #fff;
+}
+.year,
+.songs {
+  color: #979faa;
+}
+.album-cover div.card-bottom {
+}
+.album-cover .card-bottom {
+  max-width: 100px;
+}
+#btn-play-album {
+  background-color: var(--spot-green);
+  height: 30px;
+  width: 80px;
+  padding: 0 10px 0 10px;
+  margin: 0 0 20px 0;
+  border-radius: 30px;
+  font-size: x-small;
+  text-align: center;
+}
+.tracklist p {
+  font-weight: normal;
+  font-size: 12px;
+  padding-left: 5px;
+}
+.tracklist p span {
+  display: block;
+  font-size: 12px;
+  color: #979faa;
+}
+.tracklist i {
+  font-size: 0.8rem;
+}
+.tracklist i,
+.mins p {
+  color: #979faa;
+}
+.tracklist table {
+  width: 45vw;
+}
+.tracklist table td {
+  opacity: 0.8;
+  cursor: pointer;
+}
+.tracklist table td:hover {
+  opacity: 1;
+}
+/* **************** END OF ALBUM PAGE ********************** */
+
 /* **************** FOOTER MUSIC PLAYER ********************** */
-#footer-login, #footer-login > h6 { /* login page footer */
-font-size: xx-small;
+#footer-login,
+#footer-login > h6 {
+  /* login page footer */
+  font-size: xx-small;
 }
-.items:hover{
-color: #ffff;
+.items:hover {
+  color: #ffff;
 }
-#footer-home{ 
-z-index: 2;
-padding-top: 10px; /*20px*/
-background-color: #383535;
-position: fixed;
-left:0;
-bottom: 0;
-height: 75px; /* IMPORTANT: has been matched to screenshot (was 100px) */
-width: 100%;
+#footer-home {
+  z-index: 2;
+  padding-top: 10px; /*20px*/
+  background-color: #383535;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  height: 75px; /* IMPORTANT: has been matched to screenshot (was 100px) */
+  width: 100%;
 }
-.player{
-flex-wrap: nowrap;
-flex-direction: row;
+.player {
+  flex-wrap: nowrap;
+  flex-direction: row;
 }
-#nowPlaying{
+#nowPlaying {
   align-self: center;
   padding-bottom: 50px;
   align-content: center;
 }
-#footer-home img{
+#footer-home img {
   margin-left: 8px;
   width: 60px;
-  height: 60px;   
+  height: 60px;
 }
-.row .process{
- align-items: center;
- margin-bottom: 30px;
- flex-direction: column; 
+.row .process {
+  align-items: center;
+  margin-bottom: 30px;
+  flex-direction: column;
 }
-.songDur{
+.songDur {
   flex-direction: row;
-  align-content: center;  
+  align-content: center;
 }
 /* **************** END OF FOOTER PLAYER ********************** */
-
